@@ -37,7 +37,7 @@ public class InputDataActivity extends AppCompatActivity {
     Spinner spinnerRuangan, spinnerBangsal;
     String nama, tgl_lahir, usia, alamat, ruangan, bangsal, status, kondisi;
     String jenis = "";
-    int vol_awal = 0, faktor_tetes = 0;
+    int vol_awal = 0, faktor_tetes = 0 , tetesan = 0, vol_akhir = 0;
 
     DatabaseReference userRef, ruanganRef, bangsalRef, dbRef, kondisiRef;
 
@@ -86,7 +86,7 @@ public class InputDataActivity extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         kondisi = dataSnapshot.child("kondisi").getValue(String.class);
                         if (kondisi.equals("kosong")) {
-                            setUser(nama, tgl_lahir, usia, alamat, ruangan, bangsal, status, jenis, vol_awal, faktor_tetes);
+                            setUser(nama, tgl_lahir, usia, alamat, ruangan, bangsal, status, jenis, tetesan,vol_akhir, vol_awal, faktor_tetes);
                             Map<String, Object> bangsal = new HashMap<>();
                             bangsal.put("kondisi","dipakai" );
                             bangsalRef.updateChildren(bangsal);
@@ -164,8 +164,8 @@ public class InputDataActivity extends AppCompatActivity {
         });
     }
 
-    private void setUser(String nama, String tgl_lahir, String usia, String alamat, final String ruangan, final String bangsal, String status, String jenis, Integer vol_awal, Integer faktor_tetes) {
-        SetUserModel userModel = new SetUserModel(nama, tgl_lahir, usia, alamat, ruangan, bangsal, status, jenis, vol_awal, faktor_tetes);
+    private void setUser(String nama, String tgl_lahir, String usia, String alamat, String ruangan, String bangsal, String status, String jenis_infus, Integer tetesan, Integer vol_akhir, Integer vol_awal, Integer faktor_tetes) {
+        SetUserModel userModel = new SetUserModel(nama, tgl_lahir, usia, alamat, ruangan, bangsal, status, jenis_infus, tetesan, vol_akhir, vol_awal, faktor_tetes);
         final String key = userRef.push().getKey();
         ruanganRef.child(ruangan).child(bangsal).child("id_pasien").setValue(key);
         userRef.child(key).setValue(userModel)

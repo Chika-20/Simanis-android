@@ -10,10 +10,12 @@ public class SetUserModel {
     public String bangsal;
     public String status;
     public String jenis_infus;
+    public Integer tetesan;
+    public Integer vol_akhir;
     public Integer vol_awal;
     public Integer faktor_tetes;
 
-    public SetUserModel(String nama, String tgl_lahir, String usia, String alamat, String ruangan, String bangsal, String status, String jenis_infus, Integer vol_awal, Integer faktor_tetes) {
+    public SetUserModel(String nama, String tgl_lahir, String usia, String alamat, String ruangan, String bangsal, String status, String jenis_infus, Integer tetesan, Integer vol_akhir, Integer vol_awal, Integer faktor_tetes) {
         this.nama = nama;
         this.tgl_lahir = tgl_lahir;
         this.usia = usia;
@@ -22,6 +24,8 @@ public class SetUserModel {
         this.bangsal = bangsal;
         this.status = status;
         this.jenis_infus = jenis_infus;
+        this.tetesan = tetesan;
+        this.vol_akhir = vol_akhir;
         this.vol_awal = vol_awal;
         this.faktor_tetes = faktor_tetes;
     }
@@ -56,6 +60,14 @@ public class SetUserModel {
 
     public void setJenis_infus(String jenis_infus) {
         this.jenis_infus = jenis_infus;
+    }
+
+    public void setTetesan(Integer tetesan) {
+        this.tetesan = tetesan;
+    }
+
+    public void setVol_akhir(Integer vol_akhir) {
+        this.vol_akhir = vol_akhir;
     }
 
     public void setVol_awal(Integer vol_awal) {

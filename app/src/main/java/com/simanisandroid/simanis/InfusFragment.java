@@ -34,8 +34,8 @@ public class InfusFragment extends Fragment {
     DatabaseReference infusRef;
     TextView string_id, string_vol, string_persen, string_tetesan;
     BeerProgressView infusProgress;
-    String id, tetesan, vol_akhir;
-    Integer vol_awal;
+    String id;
+    Integer vol_awal, tetesan, vol_akhir;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -55,14 +55,11 @@ public class InfusFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 vol_awal = dataSnapshot.child("vol_awal").getValue(Integer.class);
-                vol_akhir = dataSnapshot.child("vol_akhir").getValue(String.class);
-                tetesan = dataSnapshot.child("tetesan").getValue(String.class);
-                if (vol_akhir.equals("50")) {
-                    sendnotif();
-                }
+                vol_akhir = dataSnapshot.child("vol_akhir").getValue(Integer.class);
+                tetesan = dataSnapshot.child("tetesan").getValue(Integer.class);
 
                 //set data ke progressbar
-                infusProgress.setBeerProgress(Integer.parseInt(vol_akhir));
+                infusProgress.setBeerProgress(vol_akhir);
                 infusProgress.setMax(vol_awal);
                 string_persen.setText(vol_akhir+" ML");
                 string_tetesan.setText(tetesan+" tetes");
@@ -77,19 +74,6 @@ public class InfusFragment extends Fragment {
 
         return v;
     }
-
-    private void sendnotif() {
-        Notification.Builder notif = new Notification.Builder(getContext())
-                .setSmallIcon(R.drawable.ic_warning)
-                .setContentTitle("Simanis Apps : INFUS HAMPIR HABIS")
-                .setContentText("Segera ganti infus pasien")
-                .setAutoCancel(true)
-                .setPriority(Notification.PRIORITY_MAX)
-                .setDefaults(Notification.DEFAULT_ALL);
-        NotificationManager notificationManager = (NotificationManager) getActivity().getSystemService( getActivity().NOTIFICATION_SERVICE);
-        notificationManager.notify(0, notif.build());
-    }
-
 
 
 }

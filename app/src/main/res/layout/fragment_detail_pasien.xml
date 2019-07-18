@@ -36,46 +36,55 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nama : "
+                android:textSize="16dp"
                 android:id="@+id/nama"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tanggal Lahir : "
+                android:textSize="16dp"
                 android:id="@+id/tgl_lahir"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Usia : "
+                android:textSize="16dp"
                 android:id="@+id/usia"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Alamat : "
+                android:textSize="16dp"
                 android:id="@+id/alamat"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ruangan : "
+                android:textSize="16dp"
                 android:id="@+id/ruangan"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Bangsal : "
+                android:textSize="16dp"
                 android:id="@+id/bangsal"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Jenis Infus : "
+                android:textSize="16dp"
                 android:id="@+id/jenis_infus"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Volume Infus : "
+                android:textSize="16dp"
                 android:id="@+id/vol_infus"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Faktor Tetes : "
+                android:textSize="16dp"
                 android:id="@+id/tetes"/>
 
         </LinearLayout>
@@ -89,7 +98,8 @@
     <Button
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
         android:padding="10dp"
         android:layout_gravity="center_horizontal"
         android:drawableLeft="@drawable/ic_edit_black_24dp"
@@ -104,7 +114,8 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
         android:background="@color/coloBtn"
         android:textStyle="bold"
         android:drawableLeft="@drawable/ic_done"

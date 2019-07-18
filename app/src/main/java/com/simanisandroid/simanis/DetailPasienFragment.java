@@ -75,7 +75,7 @@ public class DetailPasienFragment extends Fragment {
                         bangsalRef.updateChildren(sembuh).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                startActivity(new Intent(getContext(), DetailActivity.class).putExtra("id_pasien", id_pasien));
+                                startActivity(new Intent(getContext(), HomeActivity.class).putExtra("id_pasien", id_pasien));
                             }
                         });
                     }
