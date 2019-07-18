@@ -24,7 +24,7 @@ public class DetailPasienFragment extends Fragment {
 
     TextView txt_nama, txt_tgllahir, txt_usia, txt_alamat, txt_ruangan, txt_bangsal, txt_jenisinfus, txt_vol, txt_tetes;
     Button btnEdit, btn_sembuh;
-    String id_pasien;
+    String id_pasien, ruangan, bangsal;
 
     //reference database
     DatabaseReference Pasien, bangsalRef;
@@ -64,8 +64,6 @@ public class DetailPasienFragment extends Fragment {
         btn_sembuh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String ruangan = txt_ruangan.getText().toString();
-                String bangsal = txt_bangsal.getText().toString();
                 final DatabaseReference bangsalRef = FirebaseDatabase.getInstance().getReference().child("Ruangan/" + ruangan + "/" + bangsal);
                 bangsalRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -85,6 +83,7 @@ public class DetailPasienFragment extends Fragment {
 
                     }
                 });
+//                Toast.makeText(getContext(), ruangan+bangsal, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -96,8 +95,8 @@ public class DetailPasienFragment extends Fragment {
                 String tgl_lahir = dataSnapshot.child("tgl_lahir").getValue(String.class);
                 String usia = dataSnapshot.child("usia").getValue(String.class);
                 String alamat = dataSnapshot.child("alamat").getValue(String.class);
-                String ruangan = dataSnapshot.child("ruangan").getValue(String.class);
-                String bangsal = dataSnapshot.child("bangsal").getValue(String.class);
+                ruangan = dataSnapshot.child("ruangan").getValue(String.class);
+                bangsal = dataSnapshot.child("bangsal").getValue(String.class);
                 String jenis = dataSnapshot.child("jenis_infus").getValue(String.class);
                 Integer volume = dataSnapshot.child("vol_awal").getValue(Integer.class);
                 Integer tetes = dataSnapshot.child("faktor_tetes").getValue(Integer.class);
