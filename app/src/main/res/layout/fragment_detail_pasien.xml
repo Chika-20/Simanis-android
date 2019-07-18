@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailPasienFragment"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="150px"
+                android:layout_height="150px"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/medicalrecords"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_margin="10dp"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:text="DATA DETAIL PASIEN" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama : "
+                android:id="@+id/nama"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tanggal Lahir : "
+                android:id="@+id/tgl_lahir"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usia : "
+                android:id="@+id/usia"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alamat : "
+                android:id="@+id/alamat"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ruangan : "
+                android:id="@+id/ruangan"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bangsal : "
+                android:id="@+id/bangsal"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jenis Infus : "
+                android:id="@+id/jenis_infus"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Volume Infus : "
+                android:id="@+id/vol_infus"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Faktor Tetes : "
+                android:id="@+id/tetes"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:layout_gravity="center_horizontal"
+        android:drawableLeft="@drawable/ic_edit_black_24dp"
+        android:text="EDIT DATA"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:background="@color/coloBtn"
+        android:textColor="#fff"
+        android:id="@+id/btn_edit"/>
+    <Button
+        android:id="@+id/btn_sembuh"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:background="@color/coloBtn"
+        android:textStyle="bold"
+        android:drawableLeft="@drawable/ic_done"
+        android:padding="10dp"
+        android:text="SEMBUH"
+        android:textColor="#ffff"
+        android:textSize="15dp" />
+    </LinearLayout>
+
+</LinearLayout>

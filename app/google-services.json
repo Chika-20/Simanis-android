@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "477711343232",
+    "firebase_url": "https://simanista-f68fa.firebaseio.com",
+    "project_id": "simanista-f68fa",
+    "storage_bucket": "simanista-f68fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477711343232:android:14c4c25eba0a5077",
+        "android_client_info": {
+          "package_name": "com.simanisandroid.simanis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477711343232-ufkpkndn9rcmcl23hklbp4bl7rbp6sbs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.simanisandroid.simanis",
+            "certificate_hash": "9ca7b2f761629777475cdf93e200b31e34cafec6"
+          }
+        },
+        {
+          "client_id": "477711343232-lb31r7p1nk1k6ubkko1ls1b9hqealuqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw0wNf9_BWYfN4-eG4_Fr1a5CV-DQ-hOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477711343232-lb31r7p1nk1k6ubkko1ls1b9hqealuqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

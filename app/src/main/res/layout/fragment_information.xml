@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InformationFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_margin="15dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--<TextView-->
+                <!--android:layout_below="@+id/logo"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Tentang Simanis Apps"-->
+                <!--android:textSize="20dp"-->
+                <!--android:textStyle="bold"-->
+                <!--android:id="@+id/title"-->
+                <!--android:padding="5dp"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_below="@+id/title"-->
+                <!--android:id="@+id/teks1"-->
+                <!--android:padding="5dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Simanis Apps adalah aplikasi Android yang dibuat untuk memonitoring infus pasien. Simanis App bertujuan untuk memudahkan Perawat dalam memonitoring infus Pasien."/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/teks2"-->
+                <!--android:padding="5dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/teks1"-->
+                <!--android:text="Aplikasi ini memiliki fitur sebagai berikut :" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/teks3"-->
+                <!--android:paddingBottom="5dp"-->
+                <!--android:layout_margin="5dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/teks2"-->
+                <!--android:text="1. Mengelola Data Pasien\n2. Monitoring Volume secara Realtime\n3. Monitoring Tetesan Infus secara Realtime\n4. Notifikasi Infus Hampir Habis" />-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:src="@drawable/banner"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:text="Created By Team Simanis Android"/>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

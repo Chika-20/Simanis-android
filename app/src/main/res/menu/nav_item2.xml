@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_pasien"
+        android:icon="@drawable/ic_assignment_ind_black_24dp"
+        android:title="Data Pasien" />
+    <item
+        android:id="@+id/nav_vol"
+        android:icon="@drawable/ic_battery_80_black_24dp"
+        android:title="Volume Infus" />
+    <item
+        android:id="@+id/nav_grafik"
+        android:icon="@drawable/ic_trending_up_black_24dp"
+        android:title="Grafik" />
+
+</menu>
