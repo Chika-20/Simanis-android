@@ -1,15 +1,14 @@
-package com.simanisandroid.simanis;
+package com.simanisandroid.simanis.Model;
 
 public class PointValue {
-    long tgl;
+    String waktu;
     int tetesan;
 
     public PointValue(){
-
     }
 
-    public long getTgl() {
-        return tgl;
+    public String getWaktu() {
+        return waktu;
     }
 
     public int getTetesan() {

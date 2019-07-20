@@ -61,6 +61,7 @@ public class DetailPasienFragment extends Fragment {
             }
         });
 
+        //button sembuf
         btn_sembuh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

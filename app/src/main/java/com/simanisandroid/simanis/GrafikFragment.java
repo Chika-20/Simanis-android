@@ -1,7 +1,5 @@
 package com.simanisandroid.simanis;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -22,6 +20,7 @@ import com.jjoe64.graphview.series.DataPointInterface;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.jjoe64.graphview.series.OnDataPointTapListener;
 import com.jjoe64.graphview.series.Series;
+import com.simanisandroid.simanis.Model.PointValue;
 //import com.google.firebase.database.ValueEventListener;
 //import com.jjoe64.graphview.DefaultLabelFormatter;
 //import com.jjoe64.graphview.GraphView;
@@ -36,6 +35,7 @@ import java.util.Date;
 
 
 public class GrafikFragment extends Fragment {
+    String id;
     FirebaseDatabase database;
     DatabaseReference reference;
     GraphView graphView;
@@ -48,10 +48,14 @@ public class GrafikFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_grafik, container, false);
 
+        //get id pasien
+        id = ((DetailActivity) getActivity()).id;
+
         series = new LineGraphSeries();
         graphView = v.findViewById(R.id.grafik);
         graphView.addSeries(series);
 
+        //set desain di grafik
         series.setAnimated(true);
         series.setThickness(6);
         series.setDrawBackground(true);
@@ -67,8 +71,7 @@ public class GrafikFragment extends Fragment {
         });
 
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference("Ruangan/1/1/Grafik");
-
+        reference = database.getReference("Pasien/"+id+"/grafik");
         return  v;
     }
 
@@ -85,7 +88,7 @@ public class GrafikFragment extends Fragment {
 
                 for (DataSnapshot mydataSnapshot:dataSnapshot.getChildren()){
                     PointValue pointValue = mydataSnapshot.getValue(PointValue.class);
-                    dp[index] = new DataPoint(pointValue.getTgl(), pointValue.getTetesan());
+                    dp[index] = new DataPoint(Double.parseDouble(pointValue.getWaktu()), pointValue.getTetesan());
                     index++;
                 }
                 series.resetData(dp);
@@ -103,7 +106,11 @@ public class GrafikFragment extends Fragment {
         graphView.getViewport().setScalable(true);
         graphView.getViewport().setScalableY(true);
 
+        graphView.getViewport().setMinY(0);
+        graphView.getViewport().setMaxY(30);
+
         graphView.getGridLabelRenderer().setNumHorizontalLabels(5);
+        graphView.getGridLabelRenderer().setNumVerticalLabels(3);
         graphView.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(){
             @Override
             public String formatLabel(double value, boolean isValueX) {

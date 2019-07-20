@@ -7,7 +7,7 @@
     <item
         android:id="@+id/nav_vol"
         android:icon="@drawable/ic_battery_80_black_24dp"
-        android:title="Volume Infus" />
+        android:title="Monitoring" />
     <item
         android:id="@+id/nav_grafik"
         android:icon="@drawable/ic_trending_up_black_24dp"
