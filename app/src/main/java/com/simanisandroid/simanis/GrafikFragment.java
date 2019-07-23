@@ -62,6 +62,7 @@ public class GrafikFragment extends Fragment {
         series.setDrawDataPoints(true);
         series.setDataPointsRadius(15);
 
+        //set toast pada tap data point
         series.setOnDataPointTapListener(new OnDataPointTapListener() {
             @Override
             public void onTap(Series series, DataPointInterface dataPoint) {
@@ -70,6 +71,7 @@ public class GrafikFragment extends Fragment {
             }
         });
 
+        //reference database
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Pasien/"+id+"/grafik");
         return  v;

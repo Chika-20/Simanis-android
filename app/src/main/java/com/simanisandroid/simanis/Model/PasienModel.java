@@ -5,6 +5,7 @@ public class PasienModel {
     private String nama;
     private String ruangan;
     private String bangsal;
+    private Integer vol_akhir;
 
     public PasienModel() {
 
@@ -24,5 +25,9 @@ public class PasienModel {
 
     public String getBangsal() {
         return bangsal;
+    }
+
+    public Integer getVol_akhir() {
+        return vol_akhir;
     }
 }

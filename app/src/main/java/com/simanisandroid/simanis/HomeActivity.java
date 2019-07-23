@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new DataPasienFragment()).commit();
                         break;
                     case R.id.nav_notif:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new NotifikasiFragment()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new RiwayatNotifikasiFragment()).commit();
                         break;
                     case R.id.nav_info:
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_container,new InformationFragment()).commit();

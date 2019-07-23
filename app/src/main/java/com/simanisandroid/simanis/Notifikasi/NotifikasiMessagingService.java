@@ -49,7 +49,7 @@ public class NotifikasiMessagingService extends FirebaseMessagingService {
         }
     }
 
-    private void showNotification(String channel, int id, String title, String body, String ruangan, String bangsal) {
+        private void showNotification(String channel, int id, String title, String body, String ruangan, String bangsal) {
 
         Intent intent = new Intent(this, HomeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
