@@ -37,7 +37,8 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegistrasiActivity"></activity>
     </application>
 
 </manifest>
