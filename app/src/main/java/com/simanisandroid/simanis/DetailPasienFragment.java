@@ -2,6 +2,7 @@ package com.simanisandroid.simanis;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,7 +29,7 @@ public class DetailPasienFragment extends Fragment {
     String id_pasien, ruangan, bangsal;
 
     //reference database
-    DatabaseReference Pasien, bangsalRef;
+    DatabaseReference Pasien, bangsalRef, pasienRef;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,6 +68,26 @@ public class DetailPasienFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 final DatabaseReference bangsalRef = FirebaseDatabase.getInstance().getReference().child("Ruangan/" + ruangan + "/" + bangsal);
+                final DatabaseReference pasienRef = FirebaseDatabase.getInstance().getReference().child("Pasien/" + id_pasien);
+                pasienRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        Map<String, Object> sembuh = new HashMap<>();
+                        sembuh.put("status", "Sembuh");
+                        pasienRef.updateChildren(sembuh).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                startActivity(new Intent(getContext(), HomeActivity.class).putExtra("id_pasien", id_pasien));
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
                 bangsalRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {

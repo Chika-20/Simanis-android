@@ -35,11 +35,11 @@ public class InputDataActivity extends AppCompatActivity {
     RadioButton makro, mikro, vol1, vol2, tetes1, tetes2;
     Button btn_simpan;
     Spinner spinnerRuangan, spinnerBangsal;
-    String nama, tgl_lahir, usia, alamat, ruangan, bangsal, status, kondisi;
+    String nama, tgl_lahir, usia, alamat, ruangan, bangsal, status, kondisi, id_pasien;
     String jenis = "";
     int vol_awal = 0, faktor_tetes = 0 , tetesan = 0, vol_akhir = 0;
 
-    DatabaseReference userRef, ruanganRef, bangsalRef, dbRef, kondisiRef;
+    DatabaseReference userRef, ruanganRef, bangsalRef, dbRef, kondisiRef, pasienRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
