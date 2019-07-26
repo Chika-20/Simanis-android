@@ -38,12 +38,12 @@
 
 
             <EditText
-                android:id="@+id/edt_username"
+                android:id="@+id/edt_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:drawableLeft="@drawable/ic_person"
-                android:hint=" username" />
+                android:hint=" email" />
 
             <EditText
                 android:id="@+id/edt_pass"
