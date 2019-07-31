@@ -125,15 +125,15 @@ public class DetailPasienFragment extends Fragment {
                 Integer tetes = dataSnapshot.child("faktor_tetes").getValue(Integer.class);
 
 
-                txt_nama.setText("Nama : "+nama);
-                txt_tgllahir.setText("Tanggal Lahir : "+tgl_lahir);
-                txt_usia.setText("Usia : "+usia);
-                txt_alamat.setText("Alamat : "+alamat);
-                txt_ruangan.setText("Ruangan : "+ruangan);
-                txt_bangsal.setText("Bangsal : " +bangsal);
-                txt_jenisinfus.setText("Jenis Infus : "+jenis);
-                txt_vol.setText("Volume : "+volume.toString());
-                txt_tetes.setText("Faktor Tetes : "+tetes.toString());
+                txt_nama.setText(nama);
+                txt_tgllahir.setText(tgl_lahir);
+                txt_usia.setText(usia);
+                txt_alamat.setText(alamat);
+                txt_ruangan.setText(ruangan);
+                txt_bangsal.setText(bangsal);
+                txt_jenisinfus.setText(jenis);
+                txt_vol.setText(volume.toString());
+                txt_tetes.setText(tetes.toString());
 
             }
 

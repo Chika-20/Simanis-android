@@ -29,17 +29,21 @@ public class PasienAdapter extends FirebaseRecyclerAdapter<PasienModel, PasienAd
     protected void onBindViewHolder(@NonNull final PasienHolder holder, int position, @NonNull final PasienModel model) {
         //color backgrond cardview pada recycler view
         if (model.getVol_akhir()<=400){
-            holder.cardView.setCardBackgroundColor(Color.parseColor("#ff9f05"));
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#c1f7f7"));
             holder.imageView.setVisibility(View.VISIBLE);
+        } else if(model.getStatus().equals("Sembuh")){
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#ebe8e8"));
+            holder.imageView.setVisibility(View.GONE);
         } else {
-            holder.cardView.setCardBackgroundColor(Color.parseColor("#ffffff"));
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#c1f7f7"));
             holder.imageView.setVisibility(View.GONE);
         }
 
 
-        holder.text_nama.setText("Nama : "+model.getNama());
-        holder.text_ruangan.setText("Ruangan : "+model.getRuangan());
-        holder.text_bangsal.setText("Bangsal : "+model.getBangsal());
+        holder.text_nama.setText(model.getNama());
+        holder.text_ruangan.setText(model.getRuangan());
+        holder.text_bangsal.setText(model.getBangsal());
+        holder.text_status.setText(model.getStatus());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +60,7 @@ public class PasienAdapter extends FirebaseRecyclerAdapter<PasienModel, PasienAd
     }
 
     class PasienHolder extends RecyclerView.ViewHolder {
-        TextView text_nama, text_ruangan, text_bangsal;
+        TextView text_nama, text_ruangan, text_bangsal, text_status;
         CardView cardView;
         ImageView imageView;
 
@@ -65,6 +69,7 @@ public class PasienAdapter extends FirebaseRecyclerAdapter<PasienModel, PasienAd
             text_nama = itemView.findViewById(R.id.text_nama);
             text_ruangan = itemView.findViewById(R.id.text_ruangan);
             text_bangsal = itemView.findViewById(R.id.text_bangsal);
+            text_status = itemView.findViewById(R.id.text_stats);
             cardView = itemView.findViewById(R.id.card_item);
             imageView = itemView.findViewById(R.id.img_notif);
 

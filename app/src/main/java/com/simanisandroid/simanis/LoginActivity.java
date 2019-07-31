@@ -59,9 +59,9 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
                 signIn();
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                startActivity(intent);
-                finish();
+//                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+//                startActivity(intent);
+//                finish();
             }
         });
 

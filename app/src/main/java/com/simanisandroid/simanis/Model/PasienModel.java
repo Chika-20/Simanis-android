@@ -6,6 +6,7 @@ public class PasienModel {
     private String ruangan;
     private String bangsal;
     private Integer vol_akhir;
+    private String status;
 
     public PasienModel() {
 
@@ -29,5 +30,9 @@ public class PasienModel {
 
     public Integer getVol_akhir() {
         return vol_akhir;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }

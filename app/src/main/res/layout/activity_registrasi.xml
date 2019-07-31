@@ -37,31 +37,89 @@
             android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/edt_newusername"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:drawableLeft="@drawable/ic_person"
-                android:hint=" create username" />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/edt_newemail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:drawableLeft="@drawable/ic_email"
-                android:hint=" your email"
-                android:inputType="textEmailAddress" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="0.7"
+                    android:src="@drawable/ic_person" />
 
-            <EditText
-                android:id="@+id/edt_newpass"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.1">
+
+                    <EditText
+                        android:id="@+id/edt_newusername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint=" create username" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:drawableLeft="@drawable/ic_password"
-                android:hint=" create your password"
-                android:inputType="textPassword" />
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="0.7"
+                    android:src="@drawable/ic_email" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1">
+
+                    <EditText
+                        android:id="@+id/edt_newemail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint=" your email"
+                        android:inputType="textEmailAddress" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="0.7"
+                    android:src="@drawable/ic_password" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/edt_newpass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_password"
+                        android:hint=" create your password"
+                        android:inputType="textPassword" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
 
             <Button
                 android:id="@+id/btn_create"
@@ -76,4 +134,4 @@
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
-        </LinearLayout>
+</LinearLayout>

@@ -29,3 +29,13 @@ exports.sendNotification = functions.database.ref('/Pasien/{userModelId}')
                 });
             }
         });
+        
+function recordNotification(notifikasi) {
+    var notifRef = admin.database().ref("Notifikasi");
+
+    return notifRef.push().set({
+        ruangan: notifikasi.ruangan,
+        bangsal: notifikasi.bangsal,
+        waktu: admin.database.ServerValue.TIMESTAMP
+    });
+}

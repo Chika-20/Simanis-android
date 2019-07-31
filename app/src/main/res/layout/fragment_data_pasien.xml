@@ -24,7 +24,8 @@
             android:id="@+id/recycle_pasien"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="15dp"></android.support.v7.widget.RecyclerView>
+            android:layout_margin="10dp">
+        </android.support.v7.widget.RecyclerView>
     </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
@@ -33,6 +34,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="15dp"
-        android:src="@drawable/ic_add" />
+        android:src="@drawable/ic_add"/>
 
 </android.support.design.widget.CoordinatorLayout>

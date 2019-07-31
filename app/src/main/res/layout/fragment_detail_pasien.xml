@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailPasienFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".DetailPasienFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp">
+        android:layout_margin="30dp"
+        app:cardCornerRadius="5dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,71 +25,205 @@
                 android:layout_width="150px"
                 android:layout_height="150px"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/medicalrecords"/>
+                android:background="@drawable/medicalrecords" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
                 android:layout_margin="10dp"
+                android:text="DATA DETAIL PASIEN"
+                android:textAlignment="center"
                 android:textSize="17dp"
-                android:textStyle="bold"
-                android:text="DATA DETAIL PASIEN" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nama : "
-                android:textSize="16dp"
-                android:id="@+id/nama"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tanggal Lahir : "
-                android:textSize="16dp"
-                android:id="@+id/tgl_lahir"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Usia : "
-                android:textSize="16dp"
-                android:id="@+id/usia"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Alamat : "
-                android:textSize="16dp"
-                android:id="@+id/alamat"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ruangan : "
-                android:textSize="16dp"
-                android:id="@+id/ruangan"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Bangsal : "
-                android:textSize="16dp"
-                android:id="@+id/bangsal"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Jenis Infus : "
-                android:textSize="16dp"
-                android:id="@+id/jenis_infus"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Volume Infus : "
-                android:textSize="16dp"
-                android:id="@+id/vol_infus"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Faktor Tetes : "
-                android:textSize="16dp"
-                android:id="@+id/tetes"/>
+                android:textStyle="bold" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nama "
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal Lahir "
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Usia "
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Alamat "
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ruangan "
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bangsal "
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis Infus "
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Volume Infus "
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Faktor Tetes "
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="0.45"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:text=":" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/nama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/tgl_lahir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/usia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/alamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/ruangan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/bangsal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/jenis_infus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/vol_infus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/tetes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
@@ -95,34 +232,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="10dp"
-        android:padding="10dp"
-        android:layout_gravity="center_horizontal"
-        android:drawableLeft="@drawable/ic_edit_black_24dp"
-        android:text="EDIT DATA"
-        android:textStyle="bold"
-        android:textSize="15dp"
-        android:background="@color/coloBtn"
-        android:textColor="#fff"
-        android:id="@+id/btn_edit"/>
-    <Button
-        android:id="@+id/btn_sembuh"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="10dp"
-        android:background="@color/coloBtn"
-        android:textStyle="bold"
-        android:drawableLeft="@drawable/ic_done"
-        android:padding="10dp"
-        android:text="SEMBUH"
-        android:textColor="#ffff"
-        android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/coloBtn"
+            android:drawableLeft="@drawable/ic_edit_black_24dp"
+            android:padding="10dp"
+            android:text="EDIT DATA"
+            android:textColor="#fff"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_sembuh"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/coloBtn"
+            android:drawableLeft="@drawable/ic_done"
+            android:padding="10dp"
+            android:text="SEMBUH"
+            android:textColor="#ffff"
+            android:textSize="15dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>

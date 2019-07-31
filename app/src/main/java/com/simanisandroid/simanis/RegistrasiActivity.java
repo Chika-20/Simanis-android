@@ -73,6 +73,13 @@ public class RegistrasiActivity extends AppCompatActivity {
         loginPref = new LoginPreference(this);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        finish();
+    }
+
     private void registerUser() {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -150,4 +157,5 @@ public class RegistrasiActivity extends AppCompatActivity {
             i.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
+
 }
