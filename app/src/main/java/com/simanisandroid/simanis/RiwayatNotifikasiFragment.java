@@ -16,6 +16,8 @@ import com.google.firebase.database.Query;
 import com.simanisandroid.simanis.Adapter.NotifikasiAdapter;
 import com.simanisandroid.simanis.Model.NotifikasiModel;
 
+import java.util.Collections;
+
 
 public class RiwayatNotifikasiFragment extends Fragment {
     NotifikasiAdapter notifikasiAdapter;
@@ -38,7 +40,9 @@ public class RiwayatNotifikasiFragment extends Fragment {
 
         notifikasiAdapter = new NotifikasiAdapter(options);
         RecyclerView recyclerView = v.findViewById(R.id.recycler_notifikasi);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+        mLayoutManager.setReverseLayout(true);
+        recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(notifikasiAdapter);
         return v;
     }

@@ -28,12 +28,17 @@ public class PasienAdapter extends FirebaseRecyclerAdapter<PasienModel, PasienAd
     @Override
     protected void onBindViewHolder(@NonNull final PasienHolder holder, int position, @NonNull final PasienModel model) {
         //color backgrond cardview pada recycler view
-        if (model.getVol_akhir()<=400){
-            holder.cardView.setCardBackgroundColor(Color.parseColor("#c1f7f7"));
-            holder.imageView.setVisibility(View.VISIBLE);
-        } else if(model.getStatus().equals("Sembuh")){
+        if(model.getStatus().equals("Sembuh") && model.getVol_akhir()<= 400){
             holder.cardView.setCardBackgroundColor(Color.parseColor("#ebe8e8"));
             holder.imageView.setVisibility(View.GONE);
+        }
+        else if(model.getStatus().equals("Sembuh")){
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#ebe8e8"));
+            holder.imageView.setVisibility(View.GONE);
+        }
+         else if (model.getVol_akhir()<=400){
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#c1f7f7"));
+            holder.imageView.setVisibility(View.VISIBLE);
         } else {
             holder.cardView.setCardBackgroundColor(Color.parseColor("#c1f7f7"));
             holder.imageView.setVisibility(View.GONE);

@@ -15,7 +15,6 @@ import com.simanisandroid.simanis.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 public class NotifikasiAdapter extends FirebaseRecyclerAdapter<NotifikasiModel, NotifikasiAdapter.NotifikasiHolder> {
 

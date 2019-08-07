@@ -191,9 +191,11 @@ public class InputDataActivity extends AppCompatActivity {
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.Id_vol1:
                 vol_awal = 1000;
+                vol_akhir = 1000;
                 break;
             case R.id.Id_vol2:
                 vol_awal = 500;
+                vol_akhir = 500;
                 break;
         }
     }
