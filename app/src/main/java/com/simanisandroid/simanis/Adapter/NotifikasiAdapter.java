@@ -1,5 +1,6 @@
 package com.simanisandroid.simanis.Adapter;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -30,6 +31,7 @@ public class NotifikasiAdapter extends FirebaseRecyclerAdapter<NotifikasiModel, 
         holder.text_title.setText("Kondisi infus Pasien di " + model.getRuangan() + " " + model.getBangsal());
         holder.text_body.setText("Infus hampir habis. Segera ganti infus pasien");
         holder.text_date.setText(dateFormat.format(wakt));
+        holder.cardView.setCardBackgroundColor(Color.parseColor("#c1f7f7"));
     }
 
     @Override
