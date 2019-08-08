@@ -102,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:background="@color/coloBtn"
+                android:background="#b22222"
                 android:text="Login"
                 android:textColor="#ffff"
                 android:textSize="15dp" />

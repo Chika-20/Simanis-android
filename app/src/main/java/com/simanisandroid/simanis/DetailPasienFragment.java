@@ -1,8 +1,12 @@
 package com.simanisandroid.simanis;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +31,7 @@ public class DetailPasienFragment extends Fragment {
     TextView txt_nama, txt_tgllahir, txt_usia, txt_alamat, txt_ruangan, txt_bangsal, txt_jenisinfus, txt_vol, txt_tetes;
     Button btnEdit, btn_sembuh;
     String id_pasien, ruangan, bangsal;
+    Dialog dialog;
 
     //reference database
     DatabaseReference Pasien, bangsalRef, pasienRef;
@@ -67,48 +72,59 @@ public class DetailPasienFragment extends Fragment {
         btn_sembuh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final DatabaseReference bangsalRef = FirebaseDatabase.getInstance().getReference().child("Ruangan/" + ruangan + "/" + bangsal);
-                final DatabaseReference pasienRef = FirebaseDatabase.getInstance().getReference().child("Pasien/" + id_pasien);
-                pasienRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        Map<String, Object> sembuh = new HashMap<>();
-                        sembuh.put("status", "Sembuh");
-                        pasienRef.updateChildren(sembuh).addOnSuccessListener(new OnSuccessListener<Void>() {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setTitle("Konfirmasi Sembuh")
+                        .setMessage("Apakah Pasien Telah Sembuh ?")
+                        .setPositiveButton("YA", new DialogInterface.OnClickListener() {
                             @Override
-                            public void onSuccess(Void aVoid) {
-                                startActivity(new Intent(getContext(), HomeActivity.class).putExtra("id_pasien", id_pasien));
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                final DatabaseReference bangsalRef = FirebaseDatabase.getInstance().getReference().child("Ruangan/" + ruangan + "/" + bangsal);
+                                final DatabaseReference pasienRef = FirebaseDatabase.getInstance().getReference().child("Pasien/" + id_pasien);
+                            pasienRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    Map<String, Object> sembuh = new HashMap<>();
+                                    sembuh.put("status", "Sembuh");
+                                    pasienRef.updateChildren(sembuh).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            startActivity(new Intent(getContext(), HomeActivity.class).putExtra("id_pasien", id_pasien));
+                                        }
+                                    });
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                            bangsalRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    Map<String, Object> sembuh = new HashMap<>();
+                                    sembuh.put("kondisi", "kosong");
+                                    bangsalRef.updateChildren(sembuh).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            startActivity(new Intent(getContext(), HomeActivity.class).putExtra("id_pasien", id_pasien));
+                                        }
+                                    });
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
                             }
-                        });
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
-                bangsalRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        Map<String, Object> sembuh = new HashMap<>();
-                        sembuh.put("kondisi", "kosong");
-                        bangsalRef.updateChildren(sembuh).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                startActivity(new Intent(getContext(), HomeActivity.class).putExtra("id_pasien", id_pasien));
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-//                Toast.makeText(getContext(), ruangan+bangsal, Toast.LENGTH_SHORT).show();
+                        })
+                        .setNegativeButton("TIDAK", null);
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
+
+
 
         Pasien.addValueEventListener(new ValueEventListener() {
             @Override

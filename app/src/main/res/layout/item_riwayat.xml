@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
-                android:textColor="@color/coloBtn"
+                android:textColor="#b22222"
                 android:text="Tanggal ... Pukul .." />
 
             <TextView

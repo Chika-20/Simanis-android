@@ -127,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
-                android:background="@color/coloBtn"
+                android:background="#b22222"
                 android:text="Create Account"
                 android:textColor="#ffff"
                 android:textSize="15dp" />
