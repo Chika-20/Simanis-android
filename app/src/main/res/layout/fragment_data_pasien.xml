@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".DataPasienFragment">
 
@@ -21,18 +22,18 @@
             android:id="@+id/tabItem1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Data Pasien" />
+            android:text="Data Pasien Dirawat" />
         <android.support.design.widget.TabItem
             android:id="@+id/tabItem2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Data Pasien Dirawat" />
+            android:text="Data Pasien Sembuh" />
 
         <android.support.design.widget.TabItem
             android:id="@+id/tabItem3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Data Pasien Sembuh" />
+            android:text="Data Pasien Keseluruhan" />
     </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -51,6 +52,8 @@
         android:layout_alignParentRight="true"
         android:layout_gravity="end|bottom"
         android:background="#b22222"
-        android:src="@drawable/ic_add" />
+        android:src="@drawable/ic_add"
+        app:layout_anchor="@+id/container"
+        app:layout_anchorGravity="right|bottom" />
 
 </android.support.design.widget.CoordinatorLayout>
