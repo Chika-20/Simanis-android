@@ -5,9 +5,12 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +22,9 @@ import com.simanisandroid.simanis.DetailActivity;
 import com.simanisandroid.simanis.Model.PasienModel;
 import com.simanisandroid.simanis.R;
 
-public class PasienAdapter extends FirebaseRecyclerAdapter<PasienModel, PasienAdapter.PasienHolder> {
+import java.util.List;
+
+public class PasienAdapter extends FirebaseRecyclerAdapter<PasienModel, PasienAdapter.PasienHolder> implements Filterable {
 
     public PasienAdapter(@NonNull FirebaseRecyclerOptions<PasienModel> options) {
         super(options);
@@ -63,6 +68,23 @@ public class PasienAdapter extends FirebaseRecyclerAdapter<PasienModel, PasienAd
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pasien, parent, false);
         return new PasienHolder(view);
     }
+
+    @Override
+    public Filter getFilter() {
+        return pasienFilter;
+    }
+
+    private Filter pasienFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            return null;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+
+        }
+    };
 
     class PasienHolder extends RecyclerView.ViewHolder {
         TextView text_nama, text_ruangan, text_bangsal, text_status;
