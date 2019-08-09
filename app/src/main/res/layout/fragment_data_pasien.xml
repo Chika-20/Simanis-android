@@ -18,13 +18,18 @@
         android:layout_height="wrap_content">
 
         <android.support.design.widget.TabItem
-            android:id="@+id/tabItem"
+            android:id="@+id/tabItem1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Pasien" />
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Data Pasien Dirawat" />
 
         <android.support.design.widget.TabItem
-            android:id="@+id/tabItem2"
+            android:id="@+id/tabItem3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Data Pasien Sembuh" />

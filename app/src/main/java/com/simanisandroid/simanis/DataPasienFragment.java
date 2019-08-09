@@ -52,8 +52,10 @@ public class DataPasienFragment extends Fragment {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new DataPasienDirawatFragment();
+                    return new DataPasienAllFragment();
                 case 1:
+                    return new DataPasienDirawatFragment();
+                case 2:
                     return new DataPasienSembuhFragment();
                 default:
                     return null;
@@ -62,8 +64,8 @@ public class DataPasienFragment extends Fragment {
 
         @Override
         public int getCount() {
-            // Show 2 total pages.
-            return 2;
+            // Show 3 total pages.
+            return 3;
         }
     }
 }
